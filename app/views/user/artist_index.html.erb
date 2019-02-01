@@ -1,2 +1,31 @@
-<h1>User#artist_index</h1>
-<p>Find me in app/views/user/artist_index.html.erb</p>
+<div class="jumbotron">
+	<h1>Followed Artists</h1>
+	<p>See your fallowed artists in the table below</p>
+</div>
+
+<table style="width:100%;">
+	<tr>
+		<th>
+			Artist Name
+		</th>
+		<th>
+			Number of Followers
+		</th>
+		<th>
+			Artist Page
+		</th>
+	</tr>
+	<% current_user.artists.all.each do |artist| %>
+		<tr>
+			<td>
+				<%= artist.name %>
+			</td>
+			<td>
+				<%= artist.followers_number %>
+			</td>
+			<td>
+				<%= link_to  "Click Here to go to Page", artist.spotify_url %>
+			</td>
+		</tr>
+	<% end %>
+</table>

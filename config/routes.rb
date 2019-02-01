@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   # END: API SESSION
 
-  get '/auth/:provider/callback', to: "sessions#create" #LOGIN
+  get '/auth/:provider/callback', to: "session#create" #LOGIN
   delete '/logout', to: 'session#destroy' #LOGOUT
 
 

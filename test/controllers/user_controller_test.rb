@@ -1,14 +1,16 @@
 require 'test_helper'
 
 class UserControllerTest < ActionDispatch::IntegrationTest
-  test "should get show" do
+  test "should redirect user show" do
     get user_show_url
-    assert_response :success
+    follow_redirect!
+    assert_response :found
   end
 
-  test "should get artist_index" do
+  test "should redirect user artist_index" do
     get user_artist_index_url
-    assert_response :success
+    follow_redirect!
+    assert_response :found
   end
 
 end

@@ -13,6 +13,8 @@ class SessionControllerTest < ActionDispatch::IntegrationTest
 
   test "user can logout" do
     delete logout_url
+    follow_redirect!
+    assert_template 'static_pages/home'
     assert_response :success
   end
 

@@ -1,6 +1,6 @@
-<% provide(:title, "Home Page") %>
+<% provide(:title, "User Details") %>
 
 <div class="jumbotron">
-	<h1 class="center"> Hey, this is an API. </h1>
-	<p class="center"> This means that accessing directly isnt correct, but is possible. </p>
+	<h1 class="center"> Welcome, <%= current_user.name %>. </h1>
+	<p class="center"> Your Spotify account is now connected here. </p>
 </div>
