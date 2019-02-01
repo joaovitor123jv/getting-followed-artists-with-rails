@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Para executar essa aplicação você precisa de:
 
-Things you may want to cover:
+	* Ruby na versão 2.5.1
 
-* Ruby version
+	* Framework Rails, na versão 5.2.2
 
-* System dependencies
+	* Ruby Bundler, em versão 2.x.y
 
-* Configuration
+## Como executar o código.
 
-* Database creation
+	* Preparações iniciais:
+		* Instale o sqlite3, e sqlite3-dev (debian-based-distros): ` sudo apt install sqlite3 sqlite3-dev `
 
-* Database initialization
+		* Instale as gems necessárias para desenvolvimento `bundle install --whithouth-production`
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+		* 
