@@ -1,4 +1,6 @@
 class SessionController < ApplicationController
+  include SessionHelper
+
   #
   # Handle the start of usage
   #

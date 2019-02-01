@@ -6,7 +6,7 @@
 				<li><%= link_to  "Help", help_path %></li>
 				<li><%= link_to  "Home", root_url %></li>
 				<% if logged_in? %>
-					<li><%= link_to  "Fetch Artists", spotify_data_index_artists_path %></li>
+					<li><%= link_to  "Fetch Artists", user_artist_index_path %></li>
 					<li><%= link_to  "Profile Page", spotify_data_show_path(current_user) %></li>
 					<li><%= link_to	 "Logout", logout_path, method: "delete" %></li>
 				<% else %>
