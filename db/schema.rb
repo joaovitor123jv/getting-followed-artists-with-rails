@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_01_030002) do
+ActiveRecord::Schema.define(version: 2019_02_03_204751) do
 
   create_table "artists", force: :cascade do |t|
     t.integer "followers_number"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2019_02_01_030002) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "uid"
+    t.string "api_access_token"
+    t.index ["api_access_token"], name: "index_users_on_api_access_token"
     t.index ["uid"], name: "index_users_on_uid"
   end
 
