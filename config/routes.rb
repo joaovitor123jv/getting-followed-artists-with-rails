@@ -1,8 +1,19 @@
 Rails.application.routes.draw do
   # START: API SESSION
   scope '/api' do
-    scope '/ping' do
-      get '/', to: 'api#ping'
+    scope 'login' do
+      post '/', to: 'api#login_post'
+    end
+    scope '/v1' do
+      scope '/authorize-spotify' do
+        get '/', to: 'api#authorize_spotify'
+      end
+      scope '/callback' do
+        get '/', to: 'api#callback'
+      end
+      scope '/ping' do
+        get '/', to: 'api#ping'
+      end
     end
   end
 

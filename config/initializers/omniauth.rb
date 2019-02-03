@@ -6,6 +6,10 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 	scope = 'user-follow-read'
 
 	# provider :spotify, ENV['SPOTIFY_KEY'], ENV['SPOTIFY_SECRET']
+	ENV['SPOTIFY_KEY'] = spotify_key
+	ENV['SPOTIFY_SECRET'] = spotify_secret
+	ENV['SPOTIFY_SCOPE'] = scope
+
 	provider :spotify, spotify_key, spotify_secret, { 
 		scope: scope 
 	}
