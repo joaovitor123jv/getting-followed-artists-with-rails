@@ -12,7 +12,7 @@ Rails.application.routes.draw do
         get '/', to: 'api#callback'
       end
       scope '/get-user-artists' do
-        get '/', to: 'api#get_user_artists'
+        get '/', to: 'api#get_artist_list'
       end
       scope '/ping' do
         get '/', to: 'api#ping'

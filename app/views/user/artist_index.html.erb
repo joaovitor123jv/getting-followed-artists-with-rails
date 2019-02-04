@@ -15,7 +15,7 @@
 			Artist Page
 		</th>
 	</tr>
-	<% current_user.artists.all.each do |artist| %>
+	<% get_user_artists_from_database(current_user).each do |artist| %>
 		<tr>
 			<td>
 				<%= artist.name %>

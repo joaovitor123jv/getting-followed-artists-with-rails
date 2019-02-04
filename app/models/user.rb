@@ -1,7 +1,8 @@
 class User < ApplicationRecord
-	has_many :artists
+	# has_many :artists
+	# belongs_to :user_artist_connections
 	validates :uid, presence: true, uniqueness: {case_sensitive: true}
-	validates :access_token, presence: true, length: { minimum: 10 }
+	validates :access_token, length: { minimum: 10 }
 
 	#
 	# Creates or update User data, to use in "non-api-mode"

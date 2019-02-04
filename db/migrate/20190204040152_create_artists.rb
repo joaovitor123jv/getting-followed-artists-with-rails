@@ -4,11 +4,10 @@ class CreateArtists < ActiveRecord::Migration[5.2]
       t.integer :followers_number
       t.string :name
       t.string :spotify_url
-      t.integer :user_id
+      t.string :uid
 
       t.timestamps
     end
-
-    add_index :artists, :user_id
+    add_index :artists, :uid
   end
 end

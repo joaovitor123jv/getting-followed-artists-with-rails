@@ -15,5 +15,13 @@ module ImusicsPracticalTest
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+
+    # PERMITS GET, POST and OPTIONS returns to server 'http://localhost:3000' (React)
+    config.action_dispatch.default_headers = {
+      'Access-Control-Allow-Origin' => 'http://localhost:3000',
+      'Access-Control-Request-Method' => %w{GET POST OPTIONS}.join(",")
+    }
+
   end
 end
