@@ -1,11 +1,6 @@
 # README
 
-Nota sobre os testes: Eles foram mais focados nas rotas relacionadas à API, já que era o intuito do teste, criar uma API...
-
 O seguinte proposto no teste prático será implementado:
-	- API
-	- API Obter e armazenar artistas que usuário segue no banco de dados (implementado parcial)
-	- Front-End usando React, chamando a API e mostrando o resultado
 	- Deploy (será executado na web)
 
 ## Para executar essa aplicação você precisa de:
@@ -14,11 +9,11 @@ O seguinte proposto no teste prático será implementado:
 
 	* Framework Rails, na versão 5.2.2
 
-	* Ruby Bundler, em versão 2.x.y
+	* Ruby Bundler, em versão 2.0.1
 
 ## Como executar o código.
 
-	* Preparações iniciais:
+	* Preparações iniciais (instruções para GNU/Linux - Debian based):
 		* Instale o sqlite3, e sqlite3-dev (debian-based-distros): ` sudo apt install sqlite3 sqlite3-dev `
 
 		* Instale as gems necessárias para desenvolvimento `bundle install --whithouth-production`
@@ -43,6 +38,18 @@ O seguinte proposto no teste prático será implementado:
 
 		* Efetue uma requisição GET, em `localhost:8000/api/v1/ping`
 
-			* Se preferir pode utilizar o comando: `curl -X "GET" http://localhost:8000/api/ping`
+			* Se preferir pode utilizar o comando: `curl -X "GET" http://localhost:8000/api/v1/ping`
 
 			* Caso tudo dê certo, verá algo como isso: {"status":200,"response":"API WORKING"}
+
+	* Obter Autorização do Spotify
+
+		* GET→'http://localhost:8000/api/v1/authorize-spotify'
+
+	* Callback (utilizada pelo Spotify)
+
+		* GET→'http://localhost:8000/api/v1/callback'
+	
+	* Lista de Artistas Seguidos
+
+		* GET→'http://localhost:8000/api/v1/get-user-artists'

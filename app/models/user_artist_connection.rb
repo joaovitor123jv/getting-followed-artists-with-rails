@@ -1,28 +1,32 @@
 class UserArtistConnection < ApplicationRecord
-	has_many :artists
-	has_many :users
+	belongs_to :artist
+	belongs_to :user
+
 	validates :user_id, presence: true
 	validates :artist_id, presence: true
 
 	#
 	# Creates a connection between User and Artist
 	#
-	# @param [User] .make_connectionuser The user to be connected to Artist
+	# @param [User] user The user to be connected to Artist
 	# @param [Artist] artist The artist to be connected to User
 	#
 	# @return [Boolean] True on succes, false otherwise
 	#
 	def UserArtistConnection.make_connection(user, artist)
 		return false if user.nil? or artist.nil?
-		connection = find_or_create_by(user_id: user.id, artist_id: artist.id)
-		return false if connection.nil?
+
+		if not user.user_artist_connections.find_or_create_by(artist: artist)
+			puts "FAILED TO CREATE CONNECTION"
+			return false
+		end
 		return true
 	end
 
 	#
 	# Connect a specific user to one artist or more. Send {artist: Artist.find(...)} to connect one, and {artists: Artist.where(...)} to connect more
 	#
-	# @param [Hash] .connect_user_toconnections In format {user: User, (artist: Artist) || (artists: Artist[])}
+	# @param [Hash] connections In format {user: User, (artist: Artist) || (artists: Artist[])}
 	#
 	# @return [Boolean] True on succes, false otherwise
 	#

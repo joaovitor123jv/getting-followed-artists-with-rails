@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-	# has_many :artists
+	has_many :user_artist_connections
+	has_many :artists, through: :user_artist_connections
 	# belongs_to :user_artist_connections
 	validates :uid, presence: true, uniqueness: {case_sensitive: true}
 	validates :access_token, length: { minimum: 10 }

@@ -36,10 +36,14 @@ module UserHelper
 	#
 	def get_user_artists_from_database(user)
 		artists = []
-		connections = UserArtistConnection.where(user_id: user.id)
-		connections.each do |connection|
-			artists << Artist.find_by(id: connection.artist_id)
-		end
+		# connections = UserArtistConnection.where(user_id: user.id)
+		# connections.each do |connection|
+		artists = user.artists.all
+
+
+		# UserArtistConnection.where(user_id: user.id).find_each do |connection|
+		# 	artists << Artist.find_by(id: connection.artist_id)
+		# end
 		return artists
 	end
 
@@ -87,7 +91,7 @@ module UserHelper
 			end
 		end
 		if from_database
-			return artist
+			return artists
 		else
 			get_user_artists_from_database(user)
 		end
