@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  followers_number: 1
-  name: MyString
-  spotify_url: MyString
+artist1:
+  followers_number: 1230
+  name: A Very Famous Artist
+  spotify_url: https://spotify.com/artist-name-and-some-numbers
 
-two:
-  followers_number: 1
-  name: MyString
-  spotify_url: MyString
+artist2:
+  followers_number: 11455
+  name: An Almost Very Famous Artist
+  spotify_url: https://spotify.com/the-other-artist-name-and-some-numbers

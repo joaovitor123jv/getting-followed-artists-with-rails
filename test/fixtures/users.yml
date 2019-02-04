@@ -4,11 +4,18 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: 
-  name: "Um usuário de testes"
-  access_token: sdkaskldjsakldksadjaskl
-  refresh_token: skjdsajkdsakldaskj
-  uid: spotify-uid
+user1: 
+  name: "First Created User"
+  access_token: 1234567891011a
+  refresh_token: 1234567891011aa
+  uid: user1_spotify_id
+
+
+user2:
+  name: "Second Created User"
+  access_token: 1234567891011b
+  refresh_token: 1234567891011bb
+  uid: user2_spotify_id
 
 # column: value
 #

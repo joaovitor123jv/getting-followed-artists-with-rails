@@ -1,9 +1,10 @@
 require 'test_helper'
 
 class ApiControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  def default
+    enable_omniauth_test_mode
+
+  end
 
   test "get ping should return ok" do
     get '/api/v1/ping'
