@@ -21,9 +21,9 @@ module UsefulUrlsHelper
 	#
 	def generate_get_param(item)
 		item.each do |key, value|
-			puts "KEY = #{key}"
-			puts "VALUE = #{value}"
-			puts "==========="
+			# puts "KEY = #{key}"
+			# puts "VALUE = #{value}"
+			# puts "==========="
 			return '&'<<key.to_s<<'='<<value.to_s
 		end
 	end

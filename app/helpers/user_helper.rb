@@ -19,11 +19,9 @@ module UserHelper
 			return artists
 			
 		rescue RestClient::ExceptionWithResponse => e
-			puts "ERROR: FAILED TO GET ARTISTS"
-			puts e.response
-			pp e.response.body.to_json
-
+			puts "ERROR: FAILED TO FETCH SPOTIFY ARTISTS"
 			return nil
+
 		end
 	end
 

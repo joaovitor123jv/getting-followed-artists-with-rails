@@ -50,13 +50,13 @@ class ApiController < ApplicationController
 
 	def get_artist_list
 		if @error_report[:data][:error]
-			puts "AN ERROR WAS DETECTED, RETURNING ERROR LOG"
-			puts "ERROR == #{@error_report[:data][:extra_info]}"
+			# puts "AN ERROR WAS DETECTED, RETURNING ERROR LOG"
+			# puts "ERROR == #{@error_report[:data][:extra_info]}"
 			return render json: @error_report.to_json, status: @error_report[:status]
 		end
 
 		artists = get_user_artists(@user)
-		if artists.nil?
+		if not artists
 			return render json: @error_report.to_json, status: @error_report[:status]
 		end
 
@@ -83,14 +83,14 @@ class ApiController < ApplicationController
 				}
 			}
 			if params['uid'].nil? or params['api_access_token'].nil?
-				puts "NIL ARGUMENTS, RETURNING NIL"
+				# puts "NIL ARGUMENTS, RETURNING NIL"
 				@error_report[:data][:extra_info] = "Missing 'uid' and 'api_access_token'"
 				return @error_report
 			end
 
-			puts "RECEIVED PARAMS: ================"
-			pp params.to_json
-			puts "================ END ================"
+			# puts "RECEIVED PARAMS: ================"
+			# pp params.to_json
+			# puts "================ END ================"
 
 			user = User.find_by(uid: params['uid'])
 			if user.nil?
@@ -99,14 +99,14 @@ class ApiController < ApplicationController
 			end
 
 			if user.api_access_token == params['api_access_token']
-				puts "VALID USER, ACCESSING API FUNCTION"
+				# puts "VALID USER, ACCESSING API FUNCTION"
 				@error_report[:data][:error] = false
 				@error_report[:status] = 200
 				@user = user
 				return @error_report
 
 			else
-				puts "INVALID ACCESS_TOKEN, RETURNING UNAUTHORIZED STATUS"
+				# puts "INVALID ACCESS_TOKEN, RETURNING UNAUTHORIZED STATUS"
 				@error_report[:data][:extra_info] = "INVALID ACCESS_TOKEN"
 				return @error_report
 

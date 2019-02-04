@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 artist1:
-  followers_number: 1230
+  followers_number: 1230878
   name: A Very Famous Artist
   spotify_url: https://spotify.com/artist-name-and-some-numbers
 
@@ -9,3 +9,8 @@ artist2:
   followers_number: 11455
   name: An Almost Very Famous Artist
   spotify_url: https://spotify.com/the-other-artist-name-and-some-numbers
+
+artist3:
+  followers_number: 114
+  name: A Bar Artist
+  spotify_url: https://spotify.com/one-artist-name
