@@ -35,16 +35,8 @@ module UserHelper
 	# @return [Artists[]] An array of artists that are vinculated to this user
 	#
 	def get_user_artists_from_database(user)
-		artists = []
-		# connections = UserArtistConnection.where(user_id: user.id)
-		# connections.each do |connection|
-		artists = user.artists.all
-
-
-		# UserArtistConnection.where(user_id: user.id).find_each do |connection|
-		# 	artists << Artist.find_by(id: connection.artist_id)
-		# end
-		return artists
+		return nil if user.nil?
+		return user.artists.all
 	end
 
 	#

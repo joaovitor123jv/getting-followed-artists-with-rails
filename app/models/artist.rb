@@ -1,13 +1,9 @@
 class Artist < ApplicationRecord
-	# belongs_to :user
-	# belongs_to :user_artist_connections
 	has_many :user_artist_connections
 	has_many :users, through: :user_artist_connections
 
 	validates :uid, presence: true, uniqueness: true
 	validates :spotify_url, uniqueness: true
-
-	# validates :user_id, presence: true
 
 	#
 	# Stores or updates the artists fetched from Spotify

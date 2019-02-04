@@ -1,25 +1,24 @@
 Rails.application.routes.draw do
   # START: API SESSION
-  scope '/api' do
-    scope '/login' do
-      post '/', to: 'api#login_post'
+    scope '/api' do
+      # scope '/login' do  TEST ROUTE
+      #   post '/', to: 'api#login_post'
+      # end
+      scope '/v1' do
+        scope '/authorize-spotify' do
+          get '/', to: 'api#authorize_spotify'
+        end
+        scope '/callback' do
+          get '/', to: 'api#callback'
+        end
+        scope '/get-user-artists' do
+          get '/', to: 'api#get_artist_list'
+        end
+        scope '/ping' do
+          get '/', to: 'api#ping'
+        end
+      end
     end
-    scope '/v1' do
-      scope '/authorize-spotify' do
-        get '/', to: 'api#authorize_spotify'
-      end
-      scope '/callback' do
-        get '/', to: 'api#callback'
-      end
-      scope '/get-user-artists' do
-        get '/', to: 'api#get_artist_list'
-      end
-      scope '/ping' do
-        get '/', to: 'api#ping'
-      end
-    end
-  end
-
   # END: API SESSION
 
   get '/auth/:provider/callback', to: "session#create" #LOGIN
