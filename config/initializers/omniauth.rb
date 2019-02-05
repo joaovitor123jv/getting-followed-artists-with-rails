@@ -1,8 +1,6 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-	# spotify_key = "SPOTIFY_ID_HERE"
-	# spotify_secret = "SPOTIFY_SECRET_HERE"
-	spotify_key = "8bef092bb85d45f5a38a246eeca7ab15"
-	spotify_secret = "ffb46d3e5f78400686a952cd784eb331"
+	spotify_key = "SPOTIFY_ID_HERE"
+	spotify_secret = "SPOTIFY_SECRET_HERE"
 
 	# Determines what kind of data spotify can return
 	scope = 'user-follow-read'
