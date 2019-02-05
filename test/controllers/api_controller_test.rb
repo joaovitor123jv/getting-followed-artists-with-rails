@@ -108,11 +108,4 @@ class ApiControllerTest < ActionDispatch::IntegrationTest
   end
 
 
-  # test "get authorize spotify should return ok" do
-  #   get '/api/v1/authorize-spotify'
-  #   response = JSON.parse(@response.body)
-  #   assert_response :success
-  #   puts "Retorno = #{response}"
-  # end
-
 end

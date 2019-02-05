@@ -21,9 +21,6 @@ module UsefulUrlsHelper
 	#
 	def generate_get_param(item)
 		item.each do |key, value|
-			# puts "KEY = #{key}"
-			# puts "VALUE = #{value}"
-			# puts "==========="
 			return '&'<<key.to_s<<'='<<value.to_s
 		end
 	end
@@ -36,7 +33,7 @@ module UsefulUrlsHelper
 	# @return [String] The generated String
 	#
 	def get_frontent_url_for(path)
-		return "http://localhost:3000#{path}"
+		return ENV['FRONTEND_FULL_URL'] + path
 	end
 
 	#

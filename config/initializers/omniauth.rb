@@ -1,4 +1,6 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
+	# spotify_key = "SPOTIFY_ID_HERE"
+	# spotify_secret = "SPOTIFY_SECRET_HERE"
 	spotify_key = "8bef092bb85d45f5a38a246eeca7ab15"
 	spotify_secret = "ffb46d3e5f78400686a952cd784eb331"
 
@@ -13,6 +15,17 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 	provider :spotify, spotify_key, spotify_secret, { 
 		scope: scope 
 	}
+
+
+	frontend_host = "localhost"
+	frontend_port = 3000
+	frontend_implements_ssl = false
+
+	if frontend_implements_ssl
+		ENV['FRONTEND_FULL_URL'] = "https://" << frontend_host << ':' << frontend_port.to_s
+	else
+		ENV['FRONTEND_FULL_URL'] = "http://" << frontend_host << ':' << frontend_port.to_s
+	end
 
 end
 
